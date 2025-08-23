@@ -115,3 +115,16 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+# export PATH
+export PATH=$PATH:$HOME/.local/bin
+export HISTFILE=$HOME/.cache/bash/bash_history
+
+# git command
+alias gs='git status'
+alias gl='git log'
+alias ga='git add'
+alias gc='git commit'
+
+
