@@ -135,6 +135,7 @@ unset key
 
 # export PATH
 export PATH=$PATH:$HOME/.local/bin
+export HISTFILE=$HOME/.cache/zsh/zhistory
 
 eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/star.omp.json')"
 
