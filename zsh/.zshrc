@@ -136,6 +136,7 @@ unset key
 # export PATH
 export PATH=$PATH:$HOME/.local/bin
 export HISTFILE=$HOME/.cache/zsh/zhistory
+export LESSHISTFILE=$HOME/.cache/less/lesshst
 
 eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/star.omp.json')"
 
@@ -144,4 +145,20 @@ alias gs='git status'
 alias gl='git log'
 alias ga='git add'
 alias gc='git commit'
+alias wget='wget --hsts-file="$HOME/.cache/wget/hsts"'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/luna/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/luna/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/luna/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/luna/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
