@@ -89,10 +89,15 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #typeset -A ZSH_HIGHLIGHT_STYLES
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
+# 设置 compinit 缓存路径
+zstyle ':completion:*:cached' cache-path ~/.cache/zsh/
+
+# 设置 Zim 框架的缓存路径
+zstyle ':zim:completion' dumpfile ~/.cache/zsh/.zcompdump
+
 # ------------------
 # Initialize modules
 # ------------------
-
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
@@ -128,10 +133,14 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/star.omp.json')"
-
-
 # export PATH
 export PATH=$PATH:$HOME/.local/bin
 
+eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/star.omp.json')"
+
+# git command
+alias gs='git status'
+alias gl='git log'
+alias ga='git add'
+alias gc='git commit'
 
