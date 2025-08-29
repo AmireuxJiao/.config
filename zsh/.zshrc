@@ -90,10 +90,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
 # 设置 compinit 缓存路径
-zstyle ':completion:*:cached' cache-path ~/.cache/zsh/
+# zstyle ':completion:*:cached' cache-path ~/.cache/zsh/
 
 # 设置 Zim 框架的缓存路径
-zstyle ':zim:completion' dumpfile ~/.cache/zsh/.zcompdump
+# zstyle ':zim:completion' dumpfile ~/.cache/zsh/.zcompdump
 
 # ------------------
 # Initialize modules
@@ -141,11 +141,17 @@ export LESSHISTFILE=$HOME/.cache/less/lesshst
 eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/star.omp.json')"
 
 # git command
-alias gs='git status'
-alias gl='git log'
-alias ga='git add'
-alias gc='git commit'
+alias gs="git status"
+alias gl='git log --all --graph --pretty=format:"%C(magenta)%h %C(white)%an %ar%C(auto) %D%n%s%n"'
+alias ga="git add"
+alias gc="git commit"
 alias wget='wget --hsts-file="$HOME/.cache/wget/hsts"'
+alias lg="lazygit"
+
+# docker command
+alias dk="docker"
+alias dkc="docker container"
+alias dki="docker image"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
