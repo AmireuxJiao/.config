@@ -36,3 +36,6 @@
 	branch = blue
 	tag = yellow
 	remoteBranch = magenta
+
+[commit]
+	template = /home/luna/.config/git/templates/commit-template.txt
