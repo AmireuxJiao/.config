@@ -1,16 +1,16 @@
 # ==== 提交信息模板 (带 emoji) ====
 # 请按格式填写，删除无关行：
 #
-# ✨ feat: 新功能
-# 🐛 fix: 修复 bug
-# 📚 docs: 文档/注释
-# 💄 style: 代码格式、分号等无逻辑变动
-# ♻️ refactor: 重构
-# ⚡️ perf: 性能优化
-# ✅ test: 测试相关
-# 🔧 chore: 构建/工具/脚本
-# 🚀 release: 发布版本
-# 🚧 wip: 工作进行中
+# ✨ (feat): 新功能
+# 🐛 (fix): 修复 bug
+# 📚 (docs): 文档/注释
+# 💄 (style): 代码格式、分号等无逻辑变动
+# ♻️  (recycle): 代码重构
+# ⚡️ (perf): 性能优化
+# ✅ (test): 测试相关
+# 🔧 (chore): 构建/工具/脚本
+# 🚀 (release): 发布版本
+# 🚧 (wip): 工作进行中
 #
 # 示例：
 # ✨ feat: add fuzzy finder to cd command
