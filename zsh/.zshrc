@@ -2,11 +2,16 @@
 #
 # User configuration sourced by interactive shells
 #
+# 在 ~/.zshrc 最前面放
+# PS4='+%N:%i> '
+# exec 2> >(grep --line-buffered compinit >&2)   # 只把 stderr 里含 compinit 的行回显
+# setopt xtrace
+
 
 # -----------------
 # Zsh configuration
 # -----------------
-
+# autoload -Uz compinit && compinit -C -d ${ZDOTDIR:-${HOME}}/.zcompdump
 #
 # History
 #
@@ -90,10 +95,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
 # 设置 compinit 缓存路径
-# zstyle ':completion:*:cached' cache-path ~/.cache/zsh/
+zstyle ':completion:*:cached' cache-path ~/.cache/zsh/
 
 # 设置 Zim 框架的缓存路径
-# zstyle ':zim:completion' dumpfile ~/.cache/zsh/.zcompdump
+zstyle ':zim:completion' dumpfile ~/.cache/zsh/.zcompdump
 
 # ------------------
 # Initialize modules
@@ -138,6 +143,19 @@ export PATH=$PATH:$HOME/.local/bin
 export HISTFILE=$HOME/.cache/zsh/zhistory
 export LESSHISTFILE=$HOME/.cache/less/lesshst
 
+# XDG
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+
+# zim
+export ZIM_HOME="${XDG_CONFIG_HOME}/zsh/.zim"
+[[ -f ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
+
+# zim completion
+export ZSH_COMPDUMP="${XDG_CACHE_HOME}/zsh/zcompdump"
+
 eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/star.omp.json')"
 
 # git command
@@ -168,3 +186,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# ~/.config/zsh/.zshrc 中
+autoload -Uz +X compinit
+functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}\n'${functions[compinit]}
