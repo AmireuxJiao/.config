@@ -149,6 +149,10 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
+# golang
+export PATH=$PATH:$HOME/.local/go/bin
+export GOPATH=/home/luna/.local/go/1-gopath
+
 # zim
 export ZIM_HOME="${XDG_CONFIG_HOME}/zsh/.zim"
 [[ -f ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
@@ -156,7 +160,7 @@ export ZIM_HOME="${XDG_CONFIG_HOME}/zsh/.zim"
 # zim completion
 export ZSH_COMPDUMP="${XDG_CACHE_HOME}/zsh/zcompdump"
 
-eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/star.omp.json')"
+eval "$(oh-my-posh init zsh --config '/home/luna/.cache/oh-my-posh/themes/easy-term.omp.json')"
 
 # git command
 alias gs="git status"
@@ -170,6 +174,9 @@ alias lg="lazygit"
 alias dk="docker"
 alias dkc="docker container"
 alias dki="docker image"
+
+# misc command
+alias cowsay="cowsay -f stegosaurus"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -186,6 +193,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# ~/.config/zsh/.zshrc 中
-autoload -Uz +X compinit
-functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}\n'${functions[compinit]}
+# # ~/.config/zsh/.zshrc 中
+# autoload -Uz +X compinit
+# functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}\n'${functions[compinit]}
